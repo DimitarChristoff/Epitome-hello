@@ -8,9 +8,9 @@
 	<script type="text/javascript" src="components/epitome/example/lib/mootools-core.js"></script>
 	<script type="text/javascript" src="components/epitome/Epitome-min.js"></script>
 	<script>
-		var foo = new Epitome.Model({name: 'bob'});
+		var userModel = new Epitome.Model({name: 'bob'});
 
-		var View = new Class({
+		var BasicView = new Class({
 
 			Extends: Epitome.View,
 
@@ -24,11 +24,11 @@
 			}
 		});
 
-		var bar = new View({
+		var bv = new BasicView({
 
-			element: document.id('test'),
+			element: 'test',
 
-			model: foo,
+			model: userModel,
 
 			events: {
 				'change:relay(input)': 'setName'
