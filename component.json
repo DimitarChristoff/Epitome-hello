@@ -1,0 +1,13 @@
+{
+  "name": "Epitome-hello",
+  "version": "0.0.1",
+  "dependencies": {
+    "epitome": "~0.3.0",
+    "requirejs": "~2.1.5"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

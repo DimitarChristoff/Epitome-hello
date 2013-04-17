@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Epitome Hello World</title>
+</head>
+<body>
+	<div id="test"></div>
+	<script type="text/javascript" src="components/epitome/example/lib/mootools-core.js"></script>
+	<script type="text/javascript" src="components/epitome/Epitome-min.js"></script>
+	<script>
+		var foo = new Epitome.Model({name: 'bob'});
+
+		var View = new Class({
+
+			Extends: Epitome.View,
+
+			options: {
+				template: 'Name: <input value="<%-name%>" /><br/>Current name is: <%-name%>'
+			},
+
+			render: function(){
+				this.element.set('html', this.template(this.model.toJSON()));
+				this.parent();
+			}
+		});
+
+		var bar = new View({
+
+			element: document.id('test'),
+
+			model: foo,
+
+			events: {
+				'change:relay(input)': 'setName'
+			},
+
+			onSetName: function(e, el){
+				this.model.set('name', el.get('value').clean().stripScripts());
+			},
+
+			onReady: function(){
+				this.on('change:model', this.render.bind(this));
+				this.render();
+			}
+		});
+
+	</script>
+</body>
+</html>
