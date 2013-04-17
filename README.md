@@ -2,9 +2,10 @@ Epitome Hello World
 ===================
 
 Installing:
-
-`git clone https://github.com/DimitarChristoff/Epitome-hello`
-`cd Epitome-hello`
+```sh
+git clone https://github.com/DimitarChristoff/Epitome-hello`
+cd Epitome-hello
+```
 
 If you don't have bower:
 `npm install -g bower`
